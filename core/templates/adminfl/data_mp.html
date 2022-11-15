@@ -1,0 +1,35 @@
+{% extends 'baseadmin.html' %}
+{% block content %}
+
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Data Mainpower</h6>
+  </div>
+  
+  <div class="card-body">
+      <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                  <tr>
+                      <th>Nama</th>
+                      <th>Kodehub</th>
+                      <th>Opsi</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for user in datafl %}
+                  <tr>
+                    <td>{{user.username}}</td>
+                    <td>{{user.kodehub}}</td>
+                    <td>
+                      <a type="button" class="btn btn-success"href="{% url 'update' user.username %}">Edit</a>
+                      <a type="submit" class="btn btn-danger" href="{% url 'delete' user.username %}">Delete</a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+{% endblock content %}

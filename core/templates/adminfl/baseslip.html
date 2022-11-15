@@ -1,0 +1,109 @@
+
+<!doctype html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gaji {{forms.username}}</title>
+    </head>
+    <style>
+        .center {
+            text-align: center;
+        }
+    </style>
+    <body>
+    <img class="mb-4" src="./static/bootstrap/logo/sliptop.png" alt="" width="300" height="70">
+    <h3>PT. ANDIARTA MUKZIZAT</h3>
+    <hr>
+    <table style="width:100%">
+        <tr>
+          <td><b>Nama: {{forms.username}}</b></td>
+          <td><b>Station: {{forms.kodehub}}</b></td>
+        </tr>
+        <tr>
+            <td><b>NIK: {{forms.nik}}</b></td>
+            <td><b>Branch: {{forms.branch}}</b></td>
+        </tr>
+      </table>
+    <hr>
+    <table style="width:100%">
+        <tr>
+            <td class="center"><h3><b>Penerimaan</b></h3></td>
+            <td class="center"><h3><b>Potongan</b></h3></td>
+        </tr>
+    </table>
+    <hr>
+
+    <table style="width:100%">
+        <tr>
+            <td>Gaji Pokok</td>
+            <td>{{gaji}}</td>
+            <td>Asuransi</td>
+            <td>{{dr_asuransi}}</td>
+        </tr>
+        <tr>
+            <td>Bonus Harian</td>
+            <td>0</td>
+            <td>Potongan Missing</td>
+            <td>{{dr_miss}}</td>
+        </tr>
+        <tr>
+            <td>Bonus Paket</td>
+            <td>0</td>
+            <td>Potongan QR</td>
+            <td>{{dr_qr}}</td>
+        </tr>
+        <tr>
+            <td>Tunjangan</td>
+            <td>0</td>
+            <td>Potongan Disipliner</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Sewa Motor</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Parkir</td>
+            <td>{{dr_parkir}}</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Lembur</td>
+            <td>{{dr_lembur}}</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Transport</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+        <hr> 
+        <table>
+            <tr>
+                <td><h3><b>Total Penerimaan</b></h3></td>
+                <td><h3><b></b>{{td}}</h3></td>
+                <td><h3><b>Total Potongan</b></h3></td>
+                <td><h3><b>{{tp}}</b></h3></td>
+            </tr>
+        </table>  
+        <hr>
+        <table>
+            <tr>
+                <td><h3><b>Take Home Pay</b></h3></td>
+                <td><h3><b>{{ta}}</b></h3></td>
+            </tr>
+        </table> 
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'basestaff.html' %}
+{% block content %}
+      {% load widget_tweaks %}
+      <div class="card">
+        <div class="card-body">
+          <h1 class="h3 mb-3 fw-normal">Selamat Datang</h1>
+          <h4 class="h5 mb-3 fw-normal">silahkan absen untuk hari ini {{request.user}}</h4>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="getLocation()">Absen Disini</button>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">   
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Absensi</h5>
+            </div>
+            <div class="modal-body"> 
+              <form method="POST" action="">
+                {% csrf_token %}  
+                  <div class="input-group mb-3">
+                    <label for="Nama" class="col-sm-2 col-form-label">User</label>
+                    {% render_field form.username|append_attr:"readonly:readonly" name=Username value=request.user%}
+                  </div>       
+                  <div class="input-group mb-3">
+                    <label for="Tanggal" class="col-sm-2 col-form-label">Tgl & Jam</label>
+                    <input class="form-control" type="text" value="{{tanggal}}" name="tanggal" aria-label="Disabled input example" disabled readonly>
+                  </div>
+                  <div class="modal-footer"> 
+                    <input type="submit" value='save' class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+      {% endblock content %}

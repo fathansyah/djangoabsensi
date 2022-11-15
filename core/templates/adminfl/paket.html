@@ -1,0 +1,89 @@
+{% extends 'baseadmin.html' %}
+{% block content %}
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card-header bg-transparent border-success text-center h5">Push Out Paket Semarang Utara</div>
+      <div class="card-body text-success">
+        <p class="card-text text-center h5">{{j_utara}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card-header bg-transparent border-success text-center h5">Push Out Paket Semarang Barat</div>
+      <div class="card-body text-success">
+        <p class="card-text text-center h5">{{j_barat}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card-header bg-transparent border-success text-center h5">Push Out Paket Ngalian</div>
+      <div class="card-body text-success">
+        <p class="card-text text-center h5">{{j_ngaliyan}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4 mt-5">
+      <div class="card-header bg-transparent border-success text-center h5">Push Out Paket Tugu</div>
+      <div class="card-body text-success">
+        <p class="card-text text-center h5">{{j_tugu}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4 mt-5">
+      <div class="card-header bg-transparent border-success text-center h5">Push Out Paket Mijen</div>
+      <div class="card-body text-success">
+        <p class="card-text text-center h5">{{j_mijen}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4 mt-5">
+      <div class="card-header bg-transparent border-success text-center h5">COD</div>
+      <div class="card-body text-success">
+        <p class="card-text text-center h5">{{j_cod}}</p>
+      </div>
+    </div>
+  </div>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3">
+                          <h6 class="m-0 font-weight-bold text-primary">Data Paket</h6>
+                      </div>
+                      <div class="card-body">
+                          <div class="table-responsive">
+                              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                              <thead>
+                                <tr>
+                                  <th>Nama</th>
+                                  <th>Area</th>
+                                  <th>Jumlah paket</th>
+                                  <th>Failed paket</th>
+                                  <th>Status</th>
+                                  <th>COD</th>
+                                  <th>Jam & Tanggal</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                  <th>Nama</th>
+                                  <th>Area</th>
+                                  <th>Jumlah paket</th>
+                                  <th>Failed paket</th>
+                                  <th>Status</th>
+                                  <th>COD</th>
+                                  <th>Jam & Tanggal</th>
+                                </tr>
+                            </tfoot>    
+                              <tbody>
+                                {% for absenrider in absensi %}
+                                <tr>
+                                  <td>{{absenrider.username}}</td>
+                                  <td>{{absenrider.Arearider}}</td>
+                                  <td>{{absenrider.J_paket}}</td>
+                                  <td>{{absenrider.F_paket}}</td>
+                                  <td>{{absenrider.Absensi_status}}</td>
+                                  <td>{{absenrider.Cod}}</td>
+                                  <td>{{absenrider.Tanggal_absen}}</td>
+                                </tr>
+                                {% endfor %}
+                              </tbody>
+                            </table>
+
+  {% endblock content %}
+
+<!-- Fathan Syah Indraya G.231.10.0198 -->

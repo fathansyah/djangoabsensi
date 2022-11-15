@@ -1,0 +1,43 @@
+{% extends 'basestaff.html' %}
+{% block content %}
+      {% load widget_tweaks %}
+      <div class="card">
+        <div class="card-header">Tambah Gaji</div>
+        <div class="card-body">
+          <form method="POST" action="">
+            {% csrf_token %}  
+              <div class="input-group mb-3">
+                <label for="Nama" class="col-sm-2 col-form-label">User</label>
+                {% render_field form.username name=Username%}
+              </div>
+              <div class="input-group mb-3">
+                <label for="Nama" class="col-sm-2 col-form-label">Paket Missing</label>
+                {% render_field form.p_miss name=p_miss%}
+              </div> 
+              <div class="input-group mb-3">
+                <label for="Nama" class="col-sm-2 col-form-label">Paket QR</label>
+                {% render_field form.p_qr name=p_qr%}
+              </div> 
+              <div class="input-group mb-3">
+                <label for="Nama" class="col-sm-2 col-form-label">Parkir</label>
+                {% render_field form.parkir name=parkir%}
+              </div> 
+              <div class="input-group mb-3">
+                <label for="Nama" class="col-sm-2 col-form-label">Lembur</label>
+                {% render_field form.lembur name=lembur%}
+              </div>
+              <div class="input-group mb-3">
+                <label for="Nama" class="col-sm-2 col-form-label">Asuransi</label>
+                {% render_field form.asuransi name=lembur%}
+              </div>               
+              <div class="input-group mb-3">
+                <label for="Tanggal" class="col-sm-2 col-form-label">Tgl & Jam</label>
+                <input class="form-control" type="text" value="{{tanggal}}" name="tanggal" aria-label="Disabled input example" disabled readonly>
+              </div>
+              <div class="modal-footer"> 
+                <input type="submit" value='save' class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              </div>
+          </form>
+        </div>
+    </div>
+      {% endblock content %}

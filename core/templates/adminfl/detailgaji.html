@@ -1,0 +1,129 @@
+{% extends 'baseadmin.html' %}
+{% block content %}
+<h3>Detail Gaji {{forms.username}}</h3>
+<br>
+
+		<!-- Dropdown Card Example -->
+		<div class="card shadow mb-4">
+			<!-- Card Header - Dropdown -->
+			<div
+					class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+					<h6 class="m-0 font-weight-bold text-dark">Rincian Gaji</h6>
+			</div>
+			<!-- Card Body -->
+			<div class="card-body">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							Nama : {{forms.username}}
+						</div>
+						<div class="col">
+							NIK : {{forms.nik}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							Kode Hub : {{forms.kodehub}}
+						</div>
+						<div class="col">
+							Branch : {{forms.branch}}
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div class="card shadow mb-4">
+			<!-- Card Body -->
+			<div class="card-body">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							Gaji Pokok : Rp.{{gaji}}
+						</div>
+						<div class="col">
+							Tunjangan : Rp.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							Bonus Harian : Rp.
+						</div>
+						<div class="col">
+							Bonus Paket : Rp.
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card Body -->
+			<div class="card-body">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							Parkir : Rp.{{dr_parkir}}
+						</div>
+						<div class="col">
+							Sewa Motor : Rp.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							Asuransi : Rp.{{dr_asuransi}}
+						</div>
+						<div class="col">
+							Lembur : Rp.{{dr_lembur}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card Body -->
+			<div class="card-body">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							Potongan Missing : Rp.{{dr_miss}}
+						</div>
+						<div class="col">
+							Potongan QR : Rp.{{dr_qr}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							Transport : Rp.
+						</div>
+						<div class="col">
+							Potongan Disipliner : Rp.
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr class="sidebar-divider d-none d-md-block">
+			<div class="card-body">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+						</div>
+						<div class="col">
+							Total gaji yang diterima : Rp.{{ta}}
+						</div>
+					</div>
+				</div>
+			</div>
+
+	</div>
+{% endblock content %}

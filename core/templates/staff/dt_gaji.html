@@ -1,0 +1,49 @@
+{% extends 'basestaff.html' %}
+{% block content %}
+
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Data Tambah Gaji</h6>
+        <div class="dropdown no-arrow">
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                  aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="{% url 'tambahgaji' %}">Tambah Data</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url 'printgaji' %}">Print Data</a>
+              </div>
+        </div>
+    </div>
+      
+      <div class="card-body">
+          <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <thead>
+        <tr>
+          <th scope="col">Nama</th>
+          <th scope="col">Paket Missing</th>
+          <th scope="col">Paket QR</th>
+          <th scope="col">Parkir</th>
+          <th scope="col">Lembur</th>
+          <th scope="col">Asuransi</th>
+          <th scope="col">Tanggal Input</th>
+        </tr>
+      </thead>  
+      <tbody>
+        {% for gaji in d_gaji %}
+        <tr>
+          <td>{{gaji.username}}</td>
+          <td>{{gaji.p_miss}}</td>
+          <td>{{gaji.p_qr}}</td>
+          <td>{{gaji.parkir}}</td>
+          <td>{{gaji.lembur}}</td>
+          <td>{{gaji.asuransi}}</td>
+          <td>{{gaji.Tanggal_absen}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endblock content %}

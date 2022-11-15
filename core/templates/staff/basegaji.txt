@@ -1,0 +1,4 @@
+Username,Paket Missing,Paket QR,Parkir,Lembur,Asuransi,Tanggal Input
+{% for gaji in data %}
+ {{gaji.username|addslashes}},{{gaji.p_miss|addslashes}},{{gaji.p_qr|addslashes}},{{gaji.parkir|addslashes}},{{gaji.lembur|addslashes}},{{gaji.asuransi|addslashes}},{{gaji.Tanggal_absen|addslashes}}
+{% endfor %}

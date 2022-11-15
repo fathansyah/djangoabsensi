@@ -1,0 +1,29 @@
+{% extends 'basestaff.html' %}
+{% block content %}
+
+                        <div class="card shadow mb-4">
+                          <div class="card-header py-3">
+                              <h6 class="m-0 font-weight-bold text-primary">Data Absensi {{request.user}}</h6>
+                          </div>
+                          
+                          <div class="card-body">
+                              <div class="table-responsive">
+                                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th scope="col">Nama</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Jam & Tanggal</th>
+                            </tr>
+                          </thead>  
+                          <tbody>
+                            {% for absenstaff in absensis %}
+                            <tr>
+                              <td>{{absenstaff.username}}</td>
+                              <td>{{absenstaff.Absensi_status}}</td>
+                              <td>{{absenstaff.Tanggal_absen}}</td>
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+    {% endblock content %}

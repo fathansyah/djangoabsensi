@@ -1,0 +1,37 @@
+{% extends 'baserider.html' %}
+{% block content %}
+
+                        <div class="card shadow mb-4">
+                          <div class="card-header py-3">
+                              <h6 class="m-0 font-weight-bold text-primary">Data Absensi {{request.user}}</h6>
+                          </div>
+                          
+                          <div class="card-body">
+                              <div class="table-responsive">
+                                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th scope="col">Nama</th>
+                              <th scope="col">Area</th>
+                              <th scope="col">Jml Paket</th>
+                              <th scope="col">Failed Paket</th>
+                              <th scope="col">COD</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Jam & Tanggal</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for absenrider in absensis %}
+                            <tr>
+                              <td>{{absenrider.username}}</td>
+                              <td>{{absenrider.Arearider}}</td>
+                              <td>{{absenrider.J_paket}}</td>
+                              <td>{{absenrider.F_paket}}</td>
+                              <td>{{absenrider.Cod}}</td>
+                              <td>{{absenrider.Absensi_status}}</td>
+                              <td>{{absenrider.Tanggal_absen}}</td>
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                        {% endblock content %}
